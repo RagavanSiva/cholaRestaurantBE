@@ -133,3 +133,14 @@ exports.updateProductIsActive = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+// Get all products by category ID
+exports.getProductsByCategoryId = async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+    const products = await Product.find({ category: categoryId });
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

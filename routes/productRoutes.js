@@ -8,6 +8,11 @@ router.post("/", productController.createProduct);
 // Get all products
 router.get("/", productController.getAllProducts);
 
+router.get(
+  "/byCategoryId/:categoryId",
+  productController.getProductsByCategoryId
+);
+
 // Get a single product by ID
 router.get("/:id", productController.getProductById);
 

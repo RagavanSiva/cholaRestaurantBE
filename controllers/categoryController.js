@@ -110,3 +110,12 @@ exports.deleteCategory = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// Get all categories with isActive true
+exports.getAllActiveCategories = async (req, res) => {
+  try {
+    const categories = await Category.find({ active: true });
+    res.json(categories);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

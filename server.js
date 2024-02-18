@@ -22,6 +22,7 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.use("/category", require("./routes/categoryRoutes"));
 app.use("/product", require("./routes/productRoutes"));
 app.use("/customer", require("./routes/customerRoutes"));
+app.use("/employee", require("./routes/employeeRoutes"));
 
 app.get("/", (req, res) => {
   res.json({
