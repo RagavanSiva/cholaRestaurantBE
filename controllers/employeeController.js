@@ -22,14 +22,17 @@ exports.createEmployee = async (req, res) => {
     }
 
     // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = null;
+    if (password) {
+      hashedPassword = await bcrypt.hash(password, 10);
+    }
 
     const employee = new Employee({
       name,
       phoneNumber,
       employeeType,
       username,
-      password: hashedPassword,
+      password: hashedPassword ? hashedPassword : null,
       address,
       isActive,
     });
