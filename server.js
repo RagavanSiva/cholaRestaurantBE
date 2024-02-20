@@ -23,6 +23,7 @@ app.use("/category", require("./routes/categoryRoutes"));
 app.use("/product", require("./routes/productRoutes"));
 app.use("/customer", require("./routes/customerRoutes"));
 app.use("/employee", require("./routes/employeeRoutes"));
+app.use("/table", require("./routes/tableRoutes"));
 
 app.get("/", (req, res) => {
   res.json({
